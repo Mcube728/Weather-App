@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 @app.route('/')     # Homepage
 @app.route('/index')
-
 def index():
     return render_template('index.html')
 
@@ -24,11 +23,8 @@ def getWeather():
         temp = f"{weather_data['main']['temp']:.2f}",
         feels_like=f"{weather_data['main']['feels_like']:.1f}",
     )
-
-def run_server_production():
-    app.debug = True
-    serve(app, host='0.0.0.0', port=3000)
+    
 
 if __name__ == '__main__':
-    #run_server()
-    app.run(host='0.0.0.0', port=3000)
+    #app.run(host='0.0.0.0', port=3000)
+    serve(app, host='0.0.0.0', port=3000)
