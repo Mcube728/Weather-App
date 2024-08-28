@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from weather import getCurrentWeather
 from waitress import serve
+import werkzeug.serving
 
 app = Flask(__name__)
 
@@ -24,5 +25,10 @@ def getWeather():
         feels_like=f"{weather_data['main']['feels_like']:.1f}",
     )
 
-if __name__ == '__main__':
+def run_server_production():
+    app.debug = True
     serve(app, host='0.0.0.0', port=3000)
+
+if __name__ == '__main__':
+    #run_server()
+    app.run(host='0.0.0.0', port=3000)

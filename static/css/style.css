@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,19 +6,45 @@
 }
 
 body {
-    padding: 2rem;
+    
     background-color: #353535;
     color: whitesmoke;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    font-size: 2rem;
+    background-image: url('/static/img/clouds.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+}
+
+.container {
+	height: 100vh;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.city-search{
+    display: inline-block;
 }
 
 input, button {
-    font-size: 2rem;
-    padding: 1rem;
+    font-size: 1rem;
+    padding: 0.7rem;
     border-radius: 10px;
 }
