@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from weather import getCurrentWeather
+from weather import getCurrentWeather, getCityForecast
 from waitress import serve
 import werkzeug.serving
 import datetime
@@ -19,6 +19,7 @@ def getWeather():
     if not weather_data['cod'] == 200: return render_template('citynotfound.html')     # Check status code
     today = datetime.datetime.now()
     current_date = today.strftime("%A, %B %d")
+    
     # Simple City Weather Conditions
     city = weather_data['name']
     status = weather_data['weather'][0]['main']
@@ -42,6 +43,17 @@ def getWeather():
         'wind':'fa-wind',
     }
     weather_icon = icons[weather_data["weather"][0]["main"].lower()]
+
+    # 5 day weather forecast
+    weather_forecast = getCityForecast(city)
+    five_day_unformatted = [today, today + datetime.timedelta(days=1), today + datetime.timedelta(days=2), today + datetime.timedelta(days=3), today + datetime.timedelta(days=4)]
+    five_day_dates_list = [date.strftime("%a") for date in five_day_unformatted]
+    five_day_temp_list = [round(item['main']['temp']) for item in weather_forecast['list'] if '12:00:00' in item['dt_txt']]     # 5 day temperature list
+    five_day_weather_list = [item['weather'][0]['main'] for item in weather_forecast['list']
+                             if '12:00:00' in item['dt_txt']]   # 5 day weather list
+    
+    five_day_weather_icons = [icons[i.lower()] for i in five_day_weather_list]
+
     return render_template(
         'weather.html',
         city=city,
@@ -53,6 +65,10 @@ def getWeather():
         min_temp=min_temp, 
         max_temp=max_temp,
         wind_speed=wind_speed,
+        five_day_temp_list=five_day_temp_list, 
+        five_day_weather_list=five_day_weather_list,
+        five_day_dates_list=five_day_dates_list,
+        five_day_weather_icons = five_day_weather_icons,
     )
     
 

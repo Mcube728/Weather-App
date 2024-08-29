@@ -12,7 +12,7 @@ body {
     align-items: center;
     font-family: "Open Sans", sans-serif;
 }
-
+ 
 /* Background Image Classes */
 .main-wrapper{
     min-height: 100vh;
@@ -29,12 +29,12 @@ body {
 .weather-wrapper{
     min-height: 100vh;
     min-width: 100vw;
-    background-color: #455a68;
-    /*background-image: url('/static/img/palm_trees.jpg');
+    /*background-color: #455a68;*/
+    background-image: url('/static/img/a_snowy_mountain_tops.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;*/
+    background-position: center;
     display: flex; 
     justify-content: center;
 }
@@ -61,6 +61,17 @@ body {
     flex-direction: column;
 }
 
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: 100%;
+  }
+
 .title{
     display: inline-block;
     font-size: 1.5rem;
@@ -72,7 +83,7 @@ body {
 }
 
 .basic-weather{
-    width: 100%;
+    width: 50%;
     padding : 15px;
     display: flex;
     flex-direction: row;
@@ -98,48 +109,51 @@ body {
     padding: 15px;
 }
 
-.fa-solid{
+.misc-forecast .box .fa-solid{
     font-size: 1.2rem;
+}
+
+.five-forecast{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.five-forecast .box{
+    padding: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.five-forecast .box .weather-icon .fa-solid{
+    font-size: 3rem;
+    padding: 10px;
 }
 
 .city-search{
     display: inline-block;
 }
 
+
+.home {
+    text-decoration: none;
+    color: white;
+}
+
 .change-button {
+    padding: 7px;
     z-index: 2;
-	height: 28px;
-	width: 200px;
 	border-radius: 15px;
 	position: absolute;
 	top: 3%;
 	left: 3%;
+    background-color: transparent;
 }
-
-.change-button:hover {
-	box-shadow: 0px 1px 5px #d9d9d9;
-}
-
-.chevron-icon {
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	top: 7px;
-	left: 5px;
-}
-
-.change-button a {
-	color: black;
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: 700;
-	font-size: 18px;
-	letter-spacing: 0.21em;
-	text-transform: uppercase;
-	position: absolute;
-	top: 5px;
-	left: 25px;
-}
-
 
 input, button {
     font-size: 1rem;
@@ -153,14 +167,21 @@ input, button {
     .temperature {
         font-size: 2rem;
     }
+    
 }
 
 @media (max-width: 450px) {
+    html, body {margin: 0; height: 100%; overflow: hidden}
+
     .title h2{
         font-size: 1.2rem;
     }	
     
     .temperature {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    .basic-weather{
+        width: 100%;
+        border: 1px solid #fba922;
     }
 }

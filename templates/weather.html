@@ -12,6 +12,14 @@
 <body>
     <div class="weather-wrapper">
         <div class="container">
+
+            <a class="home" href="{{ url_for('index')}}">
+                <div class="change-button">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    Change City
+                </div>
+            </a>
+
             <div class='title'>
                 <h1>{{ city }}</h1>
                 <h2>{{ current_date }}</h2>
@@ -26,11 +34,35 @@
                 </div>
             </div>
 
-            <div class="city-search">
-                <form action="/weather">
-                    <input type="text" name="city" id="city" placeholder="Enter a City..." />
-                    <button type="submit">Submit</button>
-                </form>
+            <hr> 
+            <br>
+
+            <div class="five-forecast">
+                <div class="box">
+                    <h3>{{ five_day_dates_list[0] }}</h3>
+                    <div class="weather-icon"><i class="fa-solid {{ five_day_weather_icons[0] }}"></i></div>
+                    <p> {{ five_day_temp_list[0] }}&deg; C </p>
+                </div>
+                <div class="box">
+                    <h3>{{ five_day_dates_list[1] }}</h3>
+                    <div class="weather-icon"><i class="fa-solid {{ five_day_weather_icons[1] }}"></i></div>
+                    <p> {{ five_day_temp_list[1] }}&deg; C </p>
+                </div>
+                <div class="box">
+                    <h3>{{ five_day_dates_list[2] }}</h3>
+                    <div class="weather-icon"><i class="fa-solid {{ five_day_weather_icons[2] }}"></i></div>
+                    <p> {{ five_day_temp_list[0] }}&deg; C </p>
+                </div>
+                <div class="box">
+                    <h3>{{ five_day_dates_list[3] }}</h3>
+                    <div class="weather-icon"><i class="fa-solid {{ five_day_weather_icons[3] }}"></i></div>
+                    <p> {{ five_day_temp_list[3] }}&deg; C </p>
+                </div>
+                <div class="box">
+                    <h3>{{ five_day_dates_list[4] }}</h3>
+                    <div class="weather-icon"><i class="fa-solid {{ five_day_weather_icons[4] }}"></i></div>
+                    <p> {{ five_day_temp_list[4] }}&deg; C </p>
+                </div>
             </div>
         </div>
     </div>
