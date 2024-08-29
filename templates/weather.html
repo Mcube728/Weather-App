@@ -6,17 +6,26 @@
     <title>{{ title }} Weather</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/17a0bb4a8f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="weather-wrapper">
         <div class="container">
             <div class='title'>
-                <h1>{{ title }} Weather</h1>
-                <p>{{ status }} and {{ temp }} &deg;C</p>
-                <p>Feels like {{ feels_like }} &deg;C </p>
+                <h1>{{ city }}</h1>
+                <h2>{{ current_date }}</h2>
             </div>
             
+            <div class="basic-weather">
+                <div class="temperature">{{ temp }} &deg; C</div>
+                <div class="misc-forecast">
+                    <div class="box"><i class="fa-solid {{ weather_icon }}"></i> &ensp;{{ status }}</div>
+                    <div class="box"><i class="fa-solid fa-temperature-three-quarters"></i> &ensp;{{ min_temp }}&deg;C - {{ max_temp }}&deg;C</div>
+                    <div class="box"><i class="fa-solid fa-wind"></i> &ensp;{{ wind_speed }} m/s</div>
+                </div>
+            </div>
+
             <div class="city-search">
                 <form action="/weather">
                     <input type="text" name="city" id="city" placeholder="Enter a City..." />
