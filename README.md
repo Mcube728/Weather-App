@@ -4,7 +4,12 @@ A simple weather app that fetches weather data from openweather and displays it 
 
 ## Screenshots(desktop)
 
-![](screenshots/index.png)
-![](screenshots/city.png)
+![](screenshots/desktop_search.png)
+![](screenshots/desktop_results.png)
+![](screenshots/desktop_404.png)
 
-Additional features like 5 day forecast, windspeed etc will be added soon.
+## Screenshots(mobile)
+
+![](screenshots/mobile_search.png)
+![](screenshots/mobile_results.png)
+![](screenshots/mobile_404.png)

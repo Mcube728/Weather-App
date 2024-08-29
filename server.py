@@ -23,10 +23,10 @@ def getWeather():
     # Simple City Weather Conditions
     city = weather_data['name']
     status = weather_data['weather'][0]['main']
-    temp = weather_data['main']['temp']
+    temp = int(weather_data['main']['temp'])
     feels_like = weather_data['main']['feels_like']
-    min_temp = weather_data['main']['temp_min']
-    max_temp = weather_data['main']['temp_max']
+    min_temp = int(weather_data['main']['temp_min'])
+    max_temp = int(weather_data['main']['temp_max'])
     wind_speed = weather_data['wind']['speed']
     icons = {
         'clear':'fa-sun',

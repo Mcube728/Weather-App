@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +18,7 @@ body {
 .main-wrapper{
     min-height: 100vh;
     min-width: 100vw;
-    background-image: url('/static/img/clouds.jpg');
+    background-image: url('/static/img/astro.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -156,32 +157,48 @@ hr {
 }
 
 input, button {
-    font-size: 1rem;
-    padding: 0.7rem;
-    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    border-radius: 7px;
+    border: 1px #555;
+    font-family: "Noto Sans", sans-serif;
 }
 
 /* iPhone */
-
-@media (max-width: 375px) {
-    .temperature {
-        font-size: 2rem;
+@media (max-width: 760px){
+    .title{
+        text-align: center;
     }
-    
+    .basic-weather{
+        width: 80%;
+    }
 }
-
 @media (max-width: 450px) {
     html, body {margin: 0; height: 100%; overflow: hidden}
 
+    .title{
+        text-align: center;
+    }
+
+    .title h1{
+        font-size: 2rem;
+    }
     .title h2{
         font-size: 1.2rem;
     }	
     
+    input, button {
+        font-size: 1rem;
+        padding: 0.4rem;
+        border-radius: 7px;
+        border: 1px #555;
+        font-family: "Noto Sans", sans-serif;
+    }
+
     .temperature {
         font-size: 2rem;
     }
     .basic-weather{
         width: 100%;
-        border: 1px solid #fba922;
     }
 }
