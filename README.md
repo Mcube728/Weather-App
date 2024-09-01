@@ -16,4 +16,4 @@ A simple weather app that fetches weather data from openweather and displays it 
 
 ## Accessing the Web App
 
-The web app is deployed on vercel and you can check it out at the following [link](https://weather-ytlnhz0ay-mcube728s-projects.vercel.app/).
+The web app is deployed on vercel and you can check it out at the following [link](https://weather-app-mcube728s-projects.vercel.app/).
