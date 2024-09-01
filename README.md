@@ -10,9 +10,8 @@ A simple weather app that fetches weather data from openweather and displays it 
 
 ## Screenshots(mobile)
 
-![](screenshots/mobile_search.png)
-![](screenshots/mobile_results.png)
-![](screenshots/mobile_404.png)
+| ![](screenshots/mobile_search.png) | ![](screenshots/mobile_results.png) | ![](screenshots/mobile_404.png) |
+| ---------------------------------- | ----------------------------------- | ------------------------------- |
 
 ## Accessing the Web App
 
