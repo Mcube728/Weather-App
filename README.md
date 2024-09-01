@@ -13,3 +13,7 @@ A simple weather app that fetches weather data from openweather and displays it 
 ![](screenshots/mobile_search.png)
 ![](screenshots/mobile_results.png)
 ![](screenshots/mobile_404.png)
+
+## Accessing the Web App
+
+The web app is deployed on vercel and you can check it out at the following [link](https://weather-ytlnhz0ay-mcube728s-projects.vercel.app/).
